@@ -1,0 +1,9 @@
+{
+  "id": "serviceproxmoxbackup",
+  "type": "mod",
+  "name": "Proxmox Backup",
+  "description": "Allows for the sale of Proxmox Backup (manual only for now).",
+  "icon": "icon.svg",
+  "author": "NixLabs Networks",
+  "version": "0.0.4"
+}

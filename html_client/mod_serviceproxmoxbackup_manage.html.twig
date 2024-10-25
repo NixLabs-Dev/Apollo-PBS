@@ -1,0 +1,56 @@
+{% if order.status == 'active' %}
+<div class="card mb-4">
+    <div class="card-header py-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h5 class="mb-1">Manage Service</h5>
+                <span class="small text-secondary">Configure and manage your service</span>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="tab-pane fade active show" role="tabpanel" id="details">
+            <table class="table table-striped table-bordered table-sm">
+                <tbody>
+                    <tr>
+                        <td>{{ 'Username'|trans }}:</td>
+                        <td>
+                            {{ service.username}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'Password'|trans }}:</td>
+                        <td>
+                            {{ service.password}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'Datastore'|trans }}:</td>
+                        <td>
+                            {{ service.datastore}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'Server Hostname'|trans }}:</td>
+                        <td>
+                            {{ service.hostname}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="https://{{service.hostname}}:8007" class="btn btn-primary">Login to Administration</a>
+        </div>
+    </div>
+</div>
+
+{% block js %}
+<script type="text/javascript">
+function copyToClipboard() {
+    let elem = document.getElementById("wgConf");
+    let value = elem.innerText;
+
+    navigator.clipboard.writeText(value);
+}
+</script>
+{% endblock %}
+{% endif %}
